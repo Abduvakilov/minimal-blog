@@ -1,0 +1,17 @@
+@import "bootstrap";
+//@import "quill.core.css";
+@import "medium/default.css";
+@import "medium/medium-editor.css";
+body {
+  font-family: ff-meta-serif-web-pro,serif;
+}
+article {
+  font-size: 1.1rem;
+}
+#editor *:focus {
+  outline-style: none;
+}
+.medium-editor-placeholder:after {
+  font-style: normal;
+  cursor: text;
+}
