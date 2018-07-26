@@ -13,6 +13,5 @@
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
-//= require quill.min
 //= require medium-editor
 //= require_tree .

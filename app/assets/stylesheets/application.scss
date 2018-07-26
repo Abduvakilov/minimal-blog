@@ -1,5 +1,4 @@
 @import "bootstrap";
-//@import "quill.core.css";
 @import "medium/default.css";
 @import "medium/medium-editor.css";
 body {
@@ -8,10 +7,32 @@ body {
 article {
   font-size: 1.1rem;
 }
-#editor *:focus {
-  outline-style: none;
-}
-.medium-editor-placeholder:after {
-  font-style: normal;
-  cursor: text;
+.medium-editor-element {
+  
+  position: relative;
+
+  &:focus {
+    outline-style: none;
+	}
+
+  &.medium-editor-placeholder:after {
+    font-style: normal;
+    cursor: text;
+  }
+  
+  &:before {
+    opacity: 1;
+    right: 100%;
+    padding: 0 10px;
+    margin: 0 20px;
+    border-right: 1px solid rgba(0,0,0,.18);
+    content: attr(data-label);
+    position: absolute;
+    color: #b3b3b1;
+  }
+
+	&.medium-editor-placeholder:before {
+    opacity: 0;
+	}
+
 }
