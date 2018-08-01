@@ -1,4 +1,8 @@
 = render 'post', post: @post
+- if current_user == @post.user
+	aside
+		a.btn href=edit_post_path Edit
+	=link_to "Delete post", post_path(@post), method: :delete, class: 'btn alert'
 
 = content_for :section
 	section#comments
