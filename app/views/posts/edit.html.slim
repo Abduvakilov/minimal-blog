@@ -1,0 +1,7 @@
+h1 Editing Post
+
+= render 'post_editor'
+
+aside
+	button#publish data-method='put' data-url=post_path(@post) Edit
+	.errors

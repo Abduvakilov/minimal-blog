@@ -1,0 +1,61 @@
+.card {
+	@extend .box-shadow;
+  padding: 40px;
+}
+.short {
+  max-width: 500px;
+  margin: 0 auto;
+}
+.center {
+  text-align: center;
+}
+
+input, textarea {
+  font-size: 1.15rem;  
+  border: none;
+  margin: 0;
+}
+
+input:focus, textarea:focus {
+  outline: none; 
+}
+
+.field_with_errors input::placeholder {
+  color: red;
+}
+
+.field input {
+  
+  width: 100%;
+  margin-top: 20px;
+  // postition: relative;
+
+  &[type=checkbox] {
+    width: auto;
+  }
+}
+
+.field-2 div {
+  display: inline-block;
+  width: 50%;
+}
+
+.field label {
+  color: #555;
+}
+
+.actions {
+  margin-top: 10px;
+  border-top: 1px solid #ccc;
+
+  input {
+    display: block;
+    margin: 10px auto;
+  }
+
+  .alert {
+    margin-top: 10px;
+    text-align: center;
+  }
+
+}

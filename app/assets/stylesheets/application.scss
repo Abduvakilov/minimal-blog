@@ -1,38 +1,63 @@
-@import "bootstrap";
 @import "medium/default.css";
 @import "medium/medium-editor.css";
-body {
-  font-family: ff-meta-serif-web-pro,serif;
+@import "posts";
+@import "comments";
+@import "form";
+@import "nav";
+
+$light: #fcfcfc;
+
+@import url('https://fonts.googleapis.com/css?family=PT+Serif');
+
+* {
+  font-family: 'PT Serif', serif;
 }
-article {
-  font-size: 1.1rem;
+
+* {
+    box-sizing: border-box;
 }
-.medium-editor-element {
-  
-  position: relative;
 
-  &:focus {
-    outline-style: none;
-	}
+a, .btn {
+  color: #494949;
+  text-decoration: none;
+}
 
-  &.medium-editor-placeholder:after {
-    font-style: normal;
-    cursor: text;
+a:hover, .btn:hover {
+  color: #000;
+  border-bottom: 2px dotted #222;
+  text-decoration: none;
+}
+
+.btn {
+  font-size: 1rem;
+  min-width: 100px;
+  background: none;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  padding: 10px;
+  margin: 10px;
+}
+
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+
+  @media (min-width: 768px) {
+    width: 600px;
   }
-  
-  &:before {
-    opacity: 1;
-    right: 100%;
-    padding: 0 10px;
-    margin: 0 20px;
-    border-right: 1px solid rgba(0,0,0,.18);
-    content: attr(data-label);
-    position: absolute;
-    color: #b3b3b1;
+  @media (min-width: 992px) {
+    width: 650px;
   }
+  @media (min-width: 1200px) {
+    width: 700px;
+  }
+}
 
-	&.medium-editor-placeholder:before {
-    opacity: 0;
-	}
-
+.alert {
+  color: red;
+}
+.notice {
+  color: green;
 }

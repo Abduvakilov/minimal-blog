@@ -9,6 +9,18 @@ html
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
 
   body
+
+    = render 'layouts/nav'
+
     .container
-      .row: .col-6
-      = yield
+      - flash.each do |key, value|
+        div class=key
+          = value
+
+      main
+        = yield
+      
+      = yield :section
+
+      / footer
+        

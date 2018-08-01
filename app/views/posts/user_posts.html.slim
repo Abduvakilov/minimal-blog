@@ -1,0 +1,12 @@
+h1 User Posts
+
+- if @posts.empty?
+	p User has no posts
+- else
+	- @posts.each do |post|
+		= render 'post', post: post
+	.pagination
+		-if @page != 1
+			a.btn href=user_posts_path(@user, page: @page-1) ❮ Newer posts
+		-unless @last_page
+			a.btn href=user_posts_path(@user, page: @page+1) Older posts ❯		

@@ -1,0 +1,4 @@
+.post
+  h2: a href=post_path(post) = post.title
+  time class='entry-date published' datetime=post.created_at = post.created_at.strftime('%B %e, %Y')
+  .article== post.body
