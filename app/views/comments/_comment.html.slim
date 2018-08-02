@@ -1,0 +1,9 @@
+.comment
+  .author = comment&.user&.full_name
+  - if comment.user == current_user
+    = render 'comments/form', comment: comment
+  - else
+    p = comment.body
+  - if @post.user == current_user || comment.user == current_user
+    .buttons
+      a href=post_comment_path(@post, comment) data-method='delete' Delete

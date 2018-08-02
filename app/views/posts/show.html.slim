@@ -1,9 +1,11 @@
-= render 'post', post: @post
+= content_for :title
+  = @post.title
+= render @post
 - if current_user == @post.user
-	aside
-		a.btn href=edit_post_path Edit
-	=link_to "Delete post", post_path(@post), method: :delete, class: 'btn alert'
+  aside
+	a.btn href=edit_post_path Edit
+  =link_to "Delete post", post_path(@post), method: :delete, class: 'btn alert'
 
 = content_for :section
-	section#comments
-		= render 'comment'
+  section#comments
+    = render 'comments/index'

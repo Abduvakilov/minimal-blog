@@ -1,7 +1,10 @@
-h1 New Post
+= content_for :title
+  | New Post
+h2
+  = yield :title
 
 = render 'post_editor'
 
 aside
-	button.btn#publish data-method='post' data-url=posts_path Publish
-	.errors
+  button.btn#publish data-method='post' data-url=posts_path Publish
+  .errors

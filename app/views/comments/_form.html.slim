@@ -1,0 +1,7 @@
+- model = local_assigns[:comment] ? comment : Comment.new
+- action = local_assigns[:comment] ? 'edit' : 'add<br>comment'
+= form_with model: [ @post, model ], local: true do |f|
+  .input
+    = f.text_area :body, placeholder: 'Tell your thoughts'
+    = button_tag type: 'submit' do
+      == action

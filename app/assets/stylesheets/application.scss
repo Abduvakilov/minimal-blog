@@ -28,9 +28,15 @@ a:hover, .btn:hover {
   text-decoration: none;
 }
 
+a:focus, .btn:focus, button:focus {
+  outline: none;
+}
+
 .btn {
   font-size: 1rem;
-  min-width: 100px;
+  display: inline-block;
+  min-width: 70px;
+  text-align: center;
   background: none;
   border: 1px solid #ccc;
   border-radius: 20px;

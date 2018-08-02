@@ -10,7 +10,7 @@ $(document).on("turbolinks:load", function() {
       keyboardCommands: false,
     },
     toolbar: false,
-  })
+  });
 
   let $article = $('#editor .article');
   new MediumEditor($article, {
@@ -56,6 +56,9 @@ $(document).on("turbolinks:load", function() {
       error: e => {
         // console.log(e);
         let errors = e.responseJSON;
+        if (!errors) {
+            return;
+        }
         let $error = $target.next();
         if ('title' in errors) {
           $title.addClass('invalid').focus();
@@ -66,7 +69,7 @@ $(document).on("turbolinks:load", function() {
         } else {
           $error.html('Something went wrong. Try later.')
         }
-        clearTimeout(timeout)
+        clearTimeout(timeout);
         timeout = setTimeout(() => {
           $title.add($article).removeClass('invalid');
           $error.fadeOut( 600, () => $error.empty().show() );

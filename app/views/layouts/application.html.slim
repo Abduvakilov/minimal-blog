@@ -1,7 +1,9 @@
 doctype html
 html
   head
-    title Minimal Blog
+    title
+      = yield :title
+      | - Minimal Blog
     = csrf_meta_tags
     = csp_meta_tag
 

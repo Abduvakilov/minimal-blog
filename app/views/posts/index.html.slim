@@ -1,11 +1,13 @@
-h1 Posts
+= content_for :title
+  | All Posts
+
+h2 = yield :title
 - if @posts.empty?
-	p No posts yet. Be first to create one
+  p No posts yet. Be first to create one
 - else
-	- @posts.each do |post|
-		= render 'post', post: post
-	.pagination
-		-if @page != 1
-			a.btn href=posts_path(page: @page-1) ❮ Newer posts
-		-unless @last_page
-			a.btn href=posts_path(page: @page+1) Older posts ❯		
+  = render @posts
+  .pagination
+	-if @page != 1
+      a.btn href=posts_path(page: @page-1) ❮ Newer posts
+	-unless @last_page
+	  a.btn href=posts_path(page: @page+1) Older posts ❯

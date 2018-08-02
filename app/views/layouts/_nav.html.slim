@@ -3,9 +3,9 @@ nav: ul.wider-wrapper
 
 	
 	- if user_signed_in?
+        li.right: a href=destroy_user_session_path Log out
 		li.right: a href=user_posts_path(current_user) My posts
 		li.right: a href=new_post_path New post
-		li.right: a href=destroy_user_session_path Log out
 	- else
 		li.right: a href=new_user_session_path Log in
 		li.right: a href=new_user_registration_path Sign Up

@@ -1,5 +1,7 @@
-h1 Editing Post
+= content_for :title
+  | Edit Post
 
+h2 = yield :title
 = render 'post_editor'
 
 aside

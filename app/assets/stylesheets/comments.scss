@@ -18,7 +18,7 @@ section#comments {
     color: #ccc;
   }
 
-	.input {
+  .input, p {
     @extend .box-shadow;
     padding: 15px;
     margin: 20px 0;
@@ -39,7 +39,16 @@ section#comments {
       cursor: pointer;
       transition: color .5s ease;
     }
-	}
+  }
+}
+
+.author {
+  margin: 10px 0 -15px;
+}
+
+.comment .buttons {
+  float: right;
+  margin: -15px 0 0;
 }
 
 .box-shadow {

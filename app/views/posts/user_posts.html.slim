@@ -1,12 +1,13 @@
-h1 User Posts
+= content_for :title
+  = "#{@user.full_name}'s Posts"
 
+h2 = yield :title
 - if @posts.empty?
-	p User has no posts
+  p User has no posts
 - else
-	- @posts.each do |post|
-		= render 'post', post: post
-	.pagination
-		-if @page != 1
-			a.btn href=user_posts_path(@user, page: @page-1) ❮ Newer posts
-		-unless @last_page
-			a.btn href=user_posts_path(@user, page: @page+1) Older posts ❯		
+  = render @posts
+  .pagination
+	-if @page != 1
+	  a.btn href=user_posts_path(@user, page: @page-1) ❮ Newer posts
+	-unless @last_page
+	  a.btn href=user_posts_path(@user, page: @page+1) Older posts ❯

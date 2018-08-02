@@ -2,12 +2,11 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   # GET /posts
-  # GET /posts.json
   def index
     per_page = 10
     @page = params[:page] ? params[:page].to_i : 1
     @posts = Post.limit(per_page).offset per_page * (@page-1)
-    @last_page = Post.count/per_page == (@page-1)
+    @last_page = (Post.count-1)/per_page == (@page-1)
   end
 
   def user_posts
@@ -82,6 +81,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :body).merge(user: current_user)
+      params.require(:post).permit(:title, :body).merge user: current_user
     end
 end

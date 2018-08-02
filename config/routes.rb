@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 	root 'posts#index'
 
   resources :posts do
-		resources :comments, only: :create
+		resources :comments, only: [:create, :update, :destroy]
 	end
 
 	get 'posts/user/:user_id', to: 'posts#user_posts', as: :user_posts

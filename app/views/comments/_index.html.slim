@@ -1,0 +1,9 @@
+h4 Comments
+- if user_signed_in?
+  = render 'comments/form'
+- if @post.comments.count == 0
+  .comment
+    p No comments yet. Be the first
+- else
+  .comment
+    = render @post.comments
